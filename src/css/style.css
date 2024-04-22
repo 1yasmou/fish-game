@@ -1,0 +1,184 @@
+body {
+	
+	background-image:url(../images/background.png);
+	background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-size: cover; /* Stretch and scale the*/
+
+	font-family: 'Indie Flower', cursive;
+  	letter-spacing: 0.25px;
+	font-size: 21px;
+	margin: 0;
+	padding: 0;
+  	height: 100vh;
+	color: white;
+}
+
+#game-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  	align-items: center;
+	position: absolute;
+	text-align: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+
+
+
+#click-container{
+	display: none;
+	position: relative;
+	height: 100vh;
+	width: 75vw;
+	margin: 0 auto;
+	cursor: none;
+}
+
+#line{
+	display: block;
+	position:absolute;
+	height: 100vh;
+	width: 10px;
+	background-color: transparent;
+	transform: translate(-12.5vw,-100%);
+	margin-left: 8px;
+	margin-top: -12px;
+}
+#line:after {
+	content:"";
+	display:block;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	bottom: -30px;
+	left:-21px;
+	background-image: url("../images/viseur.png");
+	background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-size: cover; /* Stretch and scale the*/
+}
+
+
+#bateau{
+	content:"";
+	display:block;
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	bottom: 400px;
+	left:500px;
+	background-image: url("../images/bateau.png");
+	background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-size: cover; /* Stretch and scale the*/
+}
+
+h1 {
+	margin: 0;
+	padding: 20px;
+}
+
+.fish {
+	width: 50px;
+	height: 50px;
+	background-color: #031a04;
+	transform:rotate(45deg);
+  border-radius: 50%;
+	position: absolute;
+	transition: left 0.1s linear, top 0.1s linear, opacity 1s linear;
+	animation-name: appear;
+  animation-duration: 0.5s;
+}
+
+.fish:after {
+	content:"";
+	/*to change */
+	border-color: transparent;
+  border-style: solid;
+  border-width: 20px 20px 20px 0px;
+  transform-origin: center left;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: -15%;
+  top: -15%;	
+}
+.fish:before,
+.rare-fish:before {
+  content: "";
+  /*to change*/
+  background-color: transparent;
+  height: 8px;
+  width: 8px;
+  display: block;
+  border-radius: 50%;
+  top: 50%;
+  position: absolute;
+  left: 10%;
+}
+
+.hit-text {
+	font-size: 0	px;
+	position: absolute;
+	z-index: 2;
+	top: -20px;
+	animation-name: point;
+	animation-duration: 0.75s;
+	animation-fill-mode: forwards;
+}
+
+#score-display {
+    position: absolute;
+    top: 90px;	
+    left: 20px;
+    color: white;	
+    font-size: 24px;
+}
+
+#music-toggle-btn{
+	position: absolute;
+    top: 90px;	
+    left: 20px;
+    color: white;	
+    font-size: 24px;
+}
+
+#timer{
+	position:absolute;
+	top:0;
+	left:20;
+	padding:20px;
+	color: 	white;
+	font-size: 24px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+#timer img{
+	margin-right:5px;
+}
+
+audio{
+display:none;
+
+}
+
+#music-toggle-btn {
+    background-color: #4CAF50; /* Vert */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+#music-toggle-btn:hover {
+    background-color: #45a049;
+}
