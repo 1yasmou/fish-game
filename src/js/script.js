@@ -3,7 +3,7 @@ window.onload = function() {
 
     const gameContainer = document.querySelector("#game-container");
     const clickContainer = document.querySelector("#click-container");
-    const fishingLine = document.querySelector("#line");
+    const monViseur = document.querySelector("#mViseur");
     const startTitle = document.querySelector("#start-title");
     const startBtn = document.querySelector("#start-btn");
     const scoreDisplay = document.querySelector('#score-display');
@@ -36,7 +36,7 @@ window.onload = function() {
 
 
 clickContainer.focus();
-    //fishingLine.focus();
+    //monViseur.focus();
     let mousePosition = {
         x:0,
         y:0
@@ -64,8 +64,8 @@ let currentScore = 0;
     
   //  startBtn.addEventListener("click", startGame);
  
-  clickContainer.addEventListener("mousemove", checkCursor);
-  //document.addEventListener("keydown", checkCursor);
+  clickContainer.addEventListener("mousemove", monCurseur);
+  //document.addEventListener("keydown", monCurseur);
    //document.addEventListener("keydown", handleKeydown);
    startGame ();
    //countdown();
@@ -74,13 +74,13 @@ let currentScore = 0;
 
 
 
-    function checkCursor (event){
+    function monCurseur (event){
         //update cursor co ordinates
         mousePosition.x = event.clientX;
         mousePosition.y = event.clientY;
         //set fishing line to follow cursor
-        fishingLine.style.left= mousePosition.x+"px";
-        fishingLine.style.top = mousePosition.y+"px";
+        monViseur.style.left= mousePosition.x+"px";
+        monViseur.style.top = mousePosition.y+"px";
     }
 
 
@@ -99,8 +99,8 @@ function handleKeydown(event) {
     }
     
     // Update the fishing line's position
-    fishingLine.style.left = position.x + "px";
-    fishingLine.style.top = position.y + "px";
+    monViseur.style.left = position.x + "px";
+    monViseur.style.top = position.y + "px";
 }
 
 */
@@ -163,7 +163,7 @@ function createFish () {
     fish.classList.add("item");
     fish.classList.add("fish");
    clickContainer.appendChild(fish);
-    setPosition(fish);
+    setPos(fish);
   fish.addEventListener("click", hit);
    // fish.addEventListener("keydown", event => event.code === "Space" && hit());
    document.addEventListener("keydown", event => event.code === "Space" && hit());
@@ -182,7 +182,7 @@ function createFish () {
 }
 
 
-function setPosition(item) {
+function setPos(item) {
     let leftPos = Math.floor(Math.random() * (clickContainer.offsetWidth-100));
     let topPos = Math.floor(Math.random() * ((clickContainer.offsetHeight/5*4)-200)+(clickContainer.offsetHeight/5));
    // if it a type of sea creature and is not trash
