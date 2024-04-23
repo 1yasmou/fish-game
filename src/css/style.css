@@ -28,7 +28,7 @@ body {
 
 
 
-#click-container{
+#click-zone{
 	display: none;
 	position: relative;
 	height: 100vh;
@@ -41,7 +41,7 @@ body {
 	display: block;
 	position:absolute;
 	height: 100vh;
-	width: 10px;
+	width: 10vw;
 	background-color: transparent;
 	transform: translate(-12.5vw,-100%);
 	margin-left: 8px;
@@ -50,8 +50,8 @@ body {
 #mViseur:after {
 	content:"";
 	display:block;
-	height: 50px;
-	width: 50px;
+	height: 25px;
+	width: 25px;
 	position: absolute;
 	bottom: -30px;
 	left:-21px;
@@ -65,12 +65,12 @@ body {
 #bateau{
 	content:"";
 	display:block;
-	height: 150px;
-	width: 150px;
+	height: 250px;
+	width: 250px;
 	position: absolute;
-	bottom: 400px;
-	left:500px;
-	background-image: url("../images/bateau.png");
+	bottom: 60vh;
+	left:30vw;
+	background-image: url("../images/bateauWithArrow-removebg-preview.png");
 	background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
     background-size: cover; /* Stretch and scale the*/
@@ -92,10 +92,27 @@ h1 {
 	animation-name: appear;
   animation-duration: 0.5s;
 }
+/*
+.fish {
+	width: 60px;	
+	height: 60px;
+	background-image:url(../images/fish3-removebg-preview.png);
+	background-size: contain;
+	background-position: center; /* Center the background image s
+    background-repeat: no-repeat; /* Prevent the background image from repeating 
+    
+	position: absolute;
+	transition: left 0.1s linear, top 0.1s linear, opacity 1s linear;
+	animation-name: floatUp;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+
+}
+
 
 .fish:after {
 	content:"";
-	/*to change */
+	/*to change 
 	border-color: transparent;
   border-style: solid;
   border-width: 20px 20px 20px 0px;
@@ -105,10 +122,13 @@ h1 {
   right: -15%;
   top: -15%;	
 }
+
+
+
 .fish:before,
 .rare-fish:before {
   content: "";
-  /*to change*/
+  /*to change
   background-color: transparent;
   height: 8px;
   width: 8px;
@@ -118,10 +138,24 @@ h1 {
   position: absolute;
   left: 10%;
 }
+*/
+
+.fish.caught
+{
+	animation: pull-up 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.fish.disappear
+{
+	animation: disappear 0.35s;
+  animation-fill-mode: forwards;
+}
 
 .hit-text {
-	font-size: 0	px;
+	font-size: 50px; /*TO SHOW!!*/
 	position: absolute;
+	color:red;
 	z-index: 2;
 	top: -20px;
 	animation-name: point;
@@ -181,4 +215,28 @@ display:none;
 
 #music-toggle-btn:hover {
     background-color: #45a049;
+}
+
+
+#endgame-popup {
+    position: fixed;
+    left: 0;
+    top: 0; /* Commence du haut de la fenêtre */
+    width: 100%;
+    /* ajuste la hauteur pour que 100% - 50px du haut */
+    height: calc(100% - 50px); 
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alignement au début du conteneur flex */
+    padding-top: 20px; /* Ajoute un padding pour ne pas coller tout en haut */
+}
+
+
+
+#popup-content {
+    background-color: rgb(85, 16, 16);
+    padding: 20px;
+    border-radius: 5px;
+	color:black;
 }
