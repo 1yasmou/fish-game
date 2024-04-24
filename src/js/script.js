@@ -160,16 +160,17 @@ window.onload = function () {
 
     setTimeout(function () {
       //remove
+
       if (!fish.classList.contains("caught")) {
         fish.classList.add("disappear");
       }
       setTimeout(function () {
-        clickZone.removeChild(fish);
         if (clickZone.contains(fish)) {
+          clickZone.removeChild(fish);
         }
-      }, 1000); //frequency fish disappear
-    }, 500); //frequency fish created
-  }
+      }, 500); //frequency fish disappear
+    }, 300); //frequency fish created
+  } //use variables instead of 500/300 when you reach un threshold u change h
 
   /*la fonction fish permet de créer un div contenant l'element fish chaque demi-second. et je lui affecte une position
                                                                                                                                                                         aléatoire grace à la fonction setPos qu'on verra plus en détails par la suite.
@@ -269,7 +270,7 @@ window.onload = function () {
     document.querySelector("#final-score").innerText =
       "Votre score est : " + currentScore;
     document.querySelector("#endgame-popup").style.display = "flex";
-    myAudio.stop();
+    myAudio.pause();
   }
 };
 
