@@ -1,9 +1,9 @@
 body {
 	
 	background-image:url(../images/background.png);
-	background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
-    background-size: cover; /* Stretch and scale the*/
+	background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
 
 	font-family: 'Indie Flower', cursive;
   	letter-spacing: 0.25px;
@@ -37,11 +37,15 @@ body {
 	cursor: none;
 }
 
+
+
+
+
 #mViseur{
 	display: block;
 	position:absolute;
 	height: 100vh;
-	width: 10vw;
+	width: 50vw;
 	background-color: transparent;
 	transform: translate(-12.5vw,-100%);
 	margin-left: 8px;
@@ -50,30 +54,45 @@ body {
 #mViseur:after {
 	content:"";
 	display:block;
-	height: 25px;
-	width: 25px;
+	height: 45px;
+	width: 45px;
 	position: absolute;
 	bottom: -30px;
 	left:-21px;
-	background-image: url("../images/viseur.png");
-	background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
-    background-size: cover; /* Stretch and scale the*/
+	background-image: url("../images/viseur-rouge-removebg-preview.png");
+	background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+@keyframes floatBoat {
+    0%, 100% {
+        transform: translate(0px, 0px);
+    }
+    25% {
+        transform: translate(5px, -5px);
+    }
+    50% {
+        transform: translate(0px, 5px);
+    }
+    75% {
+        transform: translate(-5px, -5px);
+    }
 }
 
-
+	
 #bateau{
 	content:"";
 	display:block;
 	height: 250px;
 	width: 250px;
 	position: absolute;
-	bottom: 60vh;
+	bottom: 58vh;
 	left:30vw;
 	background-image: url("../images/bateauWithArrow-removebg-preview.png");
-	background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
-    background-size: cover; /* Stretch and scale the*/
+	background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+	animation: floatBoat 6s ease-in-out infinite;
 }
 
 h1 {
@@ -153,7 +172,7 @@ h1 {
 }
 
 .hit-text {
-	font-size: 50px; /*TO SHOW!!*/
+	font-size: 30px; /*TO SHOW!!*/
 	position: absolute;
 	color:red;
 	z-index: 2;
@@ -217,26 +236,53 @@ display:none;
     background-color: #45a049;
 }
 
-
 #endgame-popup {
     position: fixed;
     left: 0;
-    top: 0; /* Commence du haut de la fenêtre */
+    top: 20px;
     width: 100%;
-    /* ajuste la hauteur pour que 100% - 50px du haut */
-    height: calc(100% - 50px); 
-    background-color: rgba(0, 0, 0, 0.5);
+    height: calc(100% - 50px);
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alignement au début du conteneur flex */
-    padding-top: 20px; /* Ajoute un padding pour ne pas coller tout en haut */
+    align-items: flex-start;
+    padding-top: 50px;
+}
+#popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    color: #333333;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-
-
-#popup-content {
-    background-color: rgb(85, 16, 16);
-    padding: 20px;
+#popup-content button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-	color:black;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#popup-content button:hover {
+    background-color: #45a049;
+}
+
+#popup-content h1, #popup-content h2 {
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+#start-btn{
+	display:none;
 }
