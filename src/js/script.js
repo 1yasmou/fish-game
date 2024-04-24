@@ -168,9 +168,9 @@ window.onload = function () {
         if (clickZone.contains(fish)) {
           clickZone.removeChild(fish);
         }
-      }, 500); //frequency fish disappear
-    }, 300); //frequency fish created
-  } //use variables instead of 500/300 when you reach un threshold u change h
+      }, 700); //frequency fish disappear
+    }, 500); //frequency fish created
+  }
 
   /*la fonction fish permet de créer un div contenant l'element fish chaque demi-second. et je lui affecte une position
                                                                                                                                                                         aléatoire grace à la fonction setPos qu'on verra plus en détails par la suite.
@@ -185,17 +185,16 @@ window.onload = function () {
     );
     let randomNum = Math.floor(Math.random() * 2);
     //left side
-    /*if (randomNum%2 === 0)
-            {
-                    leftPos = Math.floor(Math.random() * ((clickZone.offsetWidth/2)-100));
-                    setInterval(function(){
-                    if (item.classList.contains("fish")) {
-                    leftPos+=5;
-                    }
-                    item.style.left = leftPos+"px";
-                    item.style.top = topPos+200+"px"; //or item.style.top=topPos+px for démo
-                }, 100);
-            }*/
+    if (randomNum % 2 === 0) {
+      leftPos = Math.floor(Math.random() * (clickZone.offsetWidth / 2 - 100));
+      setInterval(function () {
+        if (item.classList.contains("fish")) {
+          leftPos += 5;
+        }
+        item.style.left = leftPos + "px";
+        item.style.top = topPos + 200 + "px"; //or item.style.top=topPos+px for démo
+      }, 100);
+    }
 
     /* cette fonction permet de positionner le poisson dans ma zone de clique d'une facon aléatoire
                                                                                                                                                                                                                                     un chiffre entre 0 et 1 est choisi puis multiplié par 2, si le chiffre et paire je mets le poisson 
@@ -206,19 +205,19 @@ window.onload = function () {
                                                                                                                                                                                                                                     et -5px pour la droite vers la gauche. */
 
     //right side
-    //else {
-    leftPos = Math.floor(
-      Math.random() * (clickZone.offsetWidth / 2 - 100) +
-        clickZone.offsetWidth / 2
-    );
-    moveInterval = setInterval(function () {
-      leftPos -= 5;
-      item.style.left = leftPos + "px";
-      item.style.top = topPos + 200 + "px";
-    }, 100);
-    fishIntervals.push(moveInterval);
-    item.classList.add("right");
-    //  }
+    else {
+      leftPos = Math.floor(
+        Math.random() * (clickZone.offsetWidth / 2 - 100) +
+          clickZone.offsetWidth / 2
+      );
+      moveInterval = setInterval(function () {
+        leftPos -= 5;
+        item.style.left = leftPos + "px";
+        item.style.top = topPos + 200 + "px";
+      }, 100);
+      fishIntervals.push(moveInterval);
+      item.classList.add("right");
+    }
     item.style.left = leftPos + "px";
     item.style.top = topPos + 200 + "px";
   }
