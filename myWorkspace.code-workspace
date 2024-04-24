@@ -8,7 +8,12 @@
 		},
 		{
 			"path": "../gamefishExLight"
+		},
+		{
+			"path": "../fishGame_pageAcceuil"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "fishGame"
+	}
 }
