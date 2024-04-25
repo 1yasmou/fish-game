@@ -90,7 +90,7 @@ window.onload = function () {
         if (clickZone.contains(fish)) {
           clickZone.removeChild(fish);
         }
-      }, 650); //frequency fish disappear
+      }, 500); //frequency fish disappear
     }, 500); //frequency fish created
   }
 
@@ -140,7 +140,10 @@ window.onload = function () {
     catchText.style.top = `${topValue - 50}px`;
     if (type.contains("fish")) {
       catchText.innerText = "!!A CATCH!!";
-      let audio = new Audio("../sfx/cute-level-up-3-189853.mp3");
+      let audio = new Audio("./sfx/cute-level-up-3-189853.mp3");
+
+      //document.getElementById("catchFishAudio").play();
+
       audio.play();
       score++;
       currentScore++;
@@ -184,3 +187,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   musicToggleButton.addEventListener("click", toggleMusic);
 });
+
+/*
+document.addEventListener('DOMContentLoaded', function() {
+
+  const gameArea = document.querySelector('#catchFishAudio'); 
+
+  gameArea.addEventListener('click', function(event) {
+      if (event.target.classList.contains('fish')) {
+          catchFish(event);
+      }
+  });
+});
+*/
