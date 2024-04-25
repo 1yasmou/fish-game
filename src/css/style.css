@@ -1,153 +1,128 @@
 body {
-	
-	background-image:url(../images/background.png);
-	background-position: center; /* Center the background image */
-    background-repeat: no-repeat; 
-    background-size: cover; 
+  background-image: url(../images/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-	font-family: 'Indie Flower', cursive;
-  	letter-spacing: 0.25px;
-	font-size: 21px;
-	margin: 0;
-	padding: 0;
-  	height: 100vh;
-	color: white;
-    overflow: hidden;
+  font-family: "Indie Flower", cursive;
+  letter-spacing: 0.25px;
+  font-size: 21px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
 }
 
 #game-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-  	align-items: center;
-	position: absolute;
-	text-align: center;
-	height: 100vh;
-	width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
 }
 
-
-
-
-#click-zone{
-	display: none;
-	position: relative;
-	height: 100vh;
-	width: 75vw;
-	margin: 0 auto;
-	cursor: none;
+#click-zone {
+  display: none;
+  position: relative;
+  height: 100vh;
+  width: 75vw;
+  margin: 0 auto;
+  cursor: none;
 }
 
-
-
-
-
-#mViseur{
-	display: block;
-	position:absolute;
-	height: 100vh;
-	width: 50vw;
-	background-color: transparent;
-	transform: translate(-12.5vw,-100%);
-	margin-left: 8px;
-	margin-top: -12px;
+#mViseur {
+  display: block;
+  position: absolute;
+  height: 100vh;
+  width: 50vw;
+  background-color: transparent;
+  transform: translate(-12.5vw, -100%);
+  margin-left: 8px;
+  margin-top: -12px;
 }
 #mViseur:after {
-	content:"";
-	display:block;
-	height: 45px;
-	width: 45px;
-	position: absolute;
-	bottom: -30px;
-	left:-21px;
-	background-image: url("../images/viseur-rouge-removebg-preview.png");
-	background-position: center; 
-    background-repeat: no-repeat;
-    background-size: cover; 
+  content: "";
+  display: block;
+  height: 45px;
+  width: 45px;
+  position: absolute;
+  bottom: -30px;
+  left: -21px;
+  background-image: url("../images/viseur-rouge-removebg-preview.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @keyframes floatBoat {
-    0%, 100% {
-        transform: translate(0px, 0px);
-    }
-    25% {
-        transform: translate(5px, -5px);
-    }
-    50% {
-        transform: translate(0px, 5px);
-    }
-    75% {
-        transform: translate(-5px, -5px);
-    }
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(5px, -5px);
+  }
+  50% {
+    transform: translate(0px, 5px);
+  }
+  75% {
+    transform: translate(-5px, -5px);
+  }
 }
 
-	
-#bateau{
-	content:"";
-	display:block;
-	height: 250px;
-	width: 250px;
-	position: absolute;
-	bottom: 58vh;
-	left:30vw;
-	background-image: url("../images/bateauWithArrow-removebg-preview.png");
-	background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-	animation: floatBoat 6s ease-in-out infinite;
+#bateau {
+  content: "";
+  display: block;
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  bottom: 58vh;
+  left: 30vw;
+  background-image: url("../images/bateauWithArrow-removebg-preview.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: floatBoat 6s ease-in-out infinite;
 }
 
 h1 {
-	margin: 0;
-	padding: 20px;
-}
-/*
-.fish {
-	width: 50px;
-	height: 50px;
-	background-color: #031a04;
-	transform:rotate(45deg);
-  border-radius: 50%;
-	position: absolute;
-	transition: left 0.1s linear, top 0.1s linear, opacity 1s linear;
-	animation-name: appear;
-  animation-duration: 0.5s;
-}*/
-
-.fish {
-	width: 80px;	    
-	height: 80px;
-	background-image:url(../images/fish3-removebg-preview.png);
-	background-size: contain;
-	background-position: center; 
-    background-repeat: no-repeat; 
-    
-	position: absolute;
-	transition: left 0.1s linear, top 0.1s linear, opacity 1s linear;
-	animation-name: floatUp;
-	animation-duration: 1s;
-	animation-timing-function: linear;
-
+  margin: 0;
+  padding: 20px;
 }
 
+.fish {
+  width: 80px;
+  height: 80px;
+  background-image: url(../images/fish3-removebg-preview.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  transition: left 0.1s linear, top 0.1s linear, opacity 1s linear;
+  animation-name: floatUp;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
 
 .fish:after {
-	content:"";
-	
-	border-color: transparent;
+  content: "";
+
+  border-color: transparent;
   border-style: solid;
   border-width: 20px 20px 20px 0px;
   transform-origin: center left;
   transform: rotate(-45deg);
   position: absolute;
   right: -15%;
-  top: -15%;	
+  top: -15%;
 }
 
-
-
-.fish:before,
-.rare-fish:before {
+.fish:before {
   content: "";
 
   background-color: transparent;
@@ -160,133 +135,128 @@ h1 {
   left: 10%;
 }
 
-
-.fish.caught
-{
-	animation: pull-up 0.5s;
+.fish.caught {
+  animation: pull-up 0.5s;
   animation-fill-mode: forwards;
 }
 
-.fish.disappear
-{
-	animation: disappear 0.35s;
+.fish.disappear {
+  animation: disappear 0.35s;
   animation-fill-mode: forwards;
 }
 
 .hit-text {
-	font-size: 30px; /*TO SHOW!!*/
-	position: absolute;
-	color:red;
-	z-index: 2;
-	top: -20px;
-	animation-name: point;
-	animation-duration: 0.75s;
-	animation-fill-mode: forwards;
+  font-size: 30px;
+  position: absolute;
+  color: red;
+  z-index: 2;
+  top: -20px;
+  animation-name: point;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
 }
 
 #score-display {
-    position: absolute;
-    top: 90px;	
-    left: 20px;
-    color: white;	
-    font-size: 24px;
-}
-
-#music-toggle-btn{
-	position: absolute;
-    top: 90px;	
-    left: 20px;
-    color: white;	
-    font-size: 24px;
-}
-
-#timer{
-	position:absolute;
-	top:0;
-	left:20;
-	padding:20px;
-	color: 	white;
-	font-size: 24px;
-	background-color: rgba(0,0,0,0.5);
-}
-
-#timer img{
-	margin-right:5px;
-}
-
-audio{
-display:none;
-
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
 }
 
 #music-toggle-btn {
-    background-color: #4CAF50; /* Vert */
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border: none;
-    border-radius: 12px;
-    transition: background-color 0.3s ease;
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+}
+
+#timer {
+  position: absolute;
+  top: 0;
+  left: 20;
+  padding: 20px;
+  color: white;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#timer img {
+  margin-right: 5px;
+}
+
+audio {
+  display: none;
+}
+
+#music-toggle-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
 }
 
 #music-toggle-btn:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 #endgame-popup {
-    position: fixed;
-    left: 0;
-    top: 20px;
-    width: 100%;
-    height: calc(100% - 50px);
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 50px;
+  position: fixed;
+  left: 0;
+  top: 20px;
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
 }
 #popup-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFFFFF;
-    color: #333333;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    width: 90%;
-    max-width: 600px;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 #popup-content button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 #popup-content button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
-#popup-content h1, #popup-content h2 {
-    color: #333333;
-    margin-bottom: 20px;
+#popup-content h1,
+#popup-content h2 {
+  color: #333333;
+  margin-bottom: 20px;
 }
 
-#start-btn{
-	display:none;
+#start-btn {
+  display: none;
 }
-
-
