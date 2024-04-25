@@ -2,15 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../../backup Project/fishGame_Backup"
-		},
-		{
-			"path": "../gamefishExLight"
-		},
-		{
-			"path": "../fishGame_pageAcceuil"
 		}
 	],
 	"settings": {

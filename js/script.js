@@ -90,7 +90,7 @@ window.onload = function () {
         if (clickZone.contains(fish)) {
           clickZone.removeChild(fish);
         }
-      }, 500); //frequency fish disappear
+      }, 1000); //frequency fish disappear
     }, 500); //frequency fish created
   }
 
