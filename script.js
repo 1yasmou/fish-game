@@ -1,4 +1,8 @@
 window.onload = function () {
+  document.getElementById("start-btn").addEventListener("click", function () {
+    startGame();
+  });
+
   const clickZone = document.querySelector("#click-zone");
   const monViseur = document.querySelector("#mViseur");
   const startTitle = document.querySelector("#start-title");
@@ -55,6 +59,8 @@ window.onload = function () {
   }
 
   function startGame() {
+    // document.getElementById("start-btn").style.display = "none";
+    // document.getElementById("game-container").style.display = "flex";
     countdown();
     currentScore = 0;
     startTitle.style.display = "none";
