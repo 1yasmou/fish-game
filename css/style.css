@@ -52,7 +52,7 @@ body {
   position: absolute;
   bottom: -30px;
   left: -21px;
-  background-image: url("../images/viseur-rouge-removebg-preview.png");
+  background-image: url(../images/viseur-rouge-removebg-preview.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,7 +82,7 @@ body {
   position: absolute;
   bottom: 58vh;
   left: 30vw;
-  background-image: url("../images/bateauWithArrow-removebg-preview.png");
+  background-image: url(../images/bateauWithArrow-removebg-preview.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

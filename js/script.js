@@ -140,7 +140,7 @@ window.onload = function () {
     catchText.style.top = `${topValue - 50}px`;
     if (type.contains("fish")) {
       catchText.innerText = "!!A CATCH!!";
-      let audio = new Audio("./sfx/cute-level-up-3-189853.mp3");
+      let audio = new Audio("../sfx/cute-level-up-3-189853.mp3");
       audio.play();
       score++;
       currentScore++;
